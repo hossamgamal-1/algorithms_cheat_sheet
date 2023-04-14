@@ -5,7 +5,8 @@ main() {
   // linearSearch(unsortedList, 54);
   // binarySearch(unsortedList, 54);
   // customNaiveSearch('This is a dummy text', 'dummy');
-  bubleSort(unsortedList);
+  // bubleSort(unsortedList);
+  selectionSort(unsortedList);
 }
 
 int linearSearch(List<int> list, int value) {
@@ -58,6 +59,24 @@ List<int> bubleSort(List<int> list) {
         list[j] = list[j + 1];
         list[j + 1] = temp;
       }
+    }
+  }
+  return list;
+}
+
+List<int> selectionSort(List<int> list) {
+  for (int i = 0; i < list.length; i++) {
+    int leastValueIndex = i;
+    for (int j = i + 1; j < list.length; j++) {
+      if (list[leastValueIndex] > list[j]) {
+        leastValueIndex = j;
+      }
+    }
+    //swapping
+    if (leastValueIndex != i) {
+      int temp = list[i];
+      list[i] = list[leastValueIndex];
+      list[leastValueIndex] = temp;
     }
   }
   return list;

@@ -3,8 +3,9 @@ import 'dart:math';
 main() {
   List<int> unsortedList = [90, 87, 48, 13, 28, 45, 91, 54, 6, 38, 60, 32, 20];
   // linearSearch(unsortedList, 54);
-  binarySearch(unsortedList, 54);
-  customNaiveSearch('This is a dummy text', 'dummy');
+  // binarySearch(unsortedList, 54);
+  // customNaiveSearch('This is a dummy text', 'dummy');
+  bubleSort(unsortedList);
 }
 
 int linearSearch(List<int> list, int value) {
@@ -46,4 +47,18 @@ int customNaiveSearch(String text, String subText) {
     }
   }
   return -1;
+}
+
+List<int> bubleSort(List<int> list) {
+  for (int i = list.length; i > 0; i--) {
+    for (int j = 0; j < i - 1; j++) {
+      if (list[j] > list[j + 1]) {
+        //swapping
+        int temp = list[j];
+        list[j] = list[j + 1];
+        list[j + 1] = temp;
+      }
+    }
+  }
+  return list;
 }

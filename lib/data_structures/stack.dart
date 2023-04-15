@@ -8,12 +8,16 @@ class Stack<T> {
     _top++;
   }
 
+  bool isEmpty() => _top <= -1;
+
   void pop() {
-    _stack.removeLast();
-    _top--;
+    if (!isEmpty()) {
+      _stack.removeLast();
+      _top--;
+    }
   }
 
   T? getTop() => _top > -1 ? _stack[_top] : null;
 
-  void display() => print(_stack.reversed);
+  void display() => print(_stack.reversed.toList());
 }

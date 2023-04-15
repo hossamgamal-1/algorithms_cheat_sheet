@@ -1,4 +1,4 @@
-import 'sorting/merge_sort.dart';
+import 'sorting/quick_sort.dart';
 
 main() {
   List<int> unsortedList = [90, 87, 48, 13, 28, 45, 91, 54, 6, 38, 60, 32, 20];
@@ -8,5 +8,5 @@ main() {
   // print(bubleSort(unsortedList));
   // print(selectionSort(unsortedList));
   // print(insertionSort(unsortedList));
-  print(mergeSort(unsortedList));
+  print(quickSort(unsortedList));
 }
